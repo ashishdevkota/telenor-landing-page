@@ -1,0 +1,384 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #808080;
+}
+
+.header {
+  background: #0091d2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 2em;
+  position: relative;
+}
+
+.header img {
+  width: 60px;
+}
+/* hamburger section  */
+.hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 60px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  position: relative;
+  width: 35px;
+  background: #fff;
+  display: block;
+  transition: all 3;
+}
+.hamburger span:before,
+.hamburger span:after {
+  content: "";
+  background: #fff;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s;
+}
+.hamburger span:before {
+  top: 9px;
+}
+.hamburger span:after {
+  bottom: 9px;
+}
+
+.hamburger.show span:before {
+  transform: rotate(-40deg) translate(9px, -4px);
+}
+.hamburger.show span:after {
+  transform: rotate(50deg) translate(8px, 2px);
+}
+.hamburger.show span {
+  background: transparent;
+}
+
+/* end of hamburger style  */
+
+.nav {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background: #0091d2;
+  top: 100%;
+  left: 0;
+  height: 100vh;
+  padding-top: 60px;
+  z-index: 22;
+  overflow: hidden;
+}
+
+ul.nav-list {
+  list-style: none;
+  text-align: center;
+}
+li.list-items {
+  padding: 0.5rem 0;
+  transition: background-color 0.2sec;
+  padding: 1em;
+}
+
+li.list-items a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+li.list-items:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.active {
+  font-weight: 500;
+  display: block;
+}
+
+.log-in {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  border: 1px solid #fff;
+}
+
+.log-in li {
+  border-color: #fff;
+  padding: 1em;
+}
+.log-in li a {
+  vertical-align: middle;
+}
+.log-in li:first-child {
+  border-bottom: none;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+.log-in li:nth-child(3) {
+  border-right: 1px solid #fff;
+}
+
+/*  body section  */
+.section {
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #fdfdfd, rgb(242, 241, 240));
+}
+
+.full {
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+section img {
+  /* height: 300px; */
+}
+.icons {
+  display: none;
+}
+
+.hero-container img {
+  width: 800px;
+  padding: 1em;
+}
+.title {
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  opacity: 0.7;
+  font-size: 30px;
+  line-height: 33px;
+  color: #000;
+  text-align: center;
+}
+.description {
+  padding-top: 2em;
+  padding-bottom: 1em;
+  word-spacing: 4px;
+  line-height: 25px;
+}
+.btn {
+  padding: 0.8em 1em;
+  border: none;
+  width: 200px;
+  font-size: 20px;
+  border-radius: 5px;
+  transition: all 2s;
+  cursor: pointer;
+  margin-left: 60px;
+}
+.btn-primary {
+  color: #f0f0f0;
+  background-color: #0091d2;
+  margin-top: 1em;
+}
+
+.vid-section {
+  position: relative;
+  width: 100%;
+}
+.img-vid {
+  background-image: url("./img/gfx_movieThumb_smaller.png");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-color: #888;
+  height: 230px;
+  width: 100%;
+}
+
+#vid-icon {
+  position: absolute;
+  height: 60px;
+  top: 35%;
+  left: 40%;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+.platform-logo {
+  display: none;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+}
+
+.info p {
+  margin-top: 1.4em;
+  margin-bottom: 1em;
+}
+.info a {
+  color: #222;
+  font-weight: 500;
+}
+/* footer section  */
+.footer {
+  background: #0091d2;
+  padding: 2em;
+}
+.footer .footer-links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #fff;
+  list-style: none;
+}
+.footer a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* desktop media query  */
+@media only screen and (min-width: 992px) {
+  main {
+  }
+  .hamburger {
+    display: none;
+  }
+  .nav {
+    position: relative;
+    display: flex;
+    height: 70px;
+    margin: 0;
+    padding: 0;
+    width: 320px;
+  }
+
+  .log-in {
+    display: flex;
+    border: none;
+  }
+  .log-in li:first-child,
+  .log-in li:nth-child(3) {
+    border: none;
+  }
+
+  li.list-items .lang {
+    padding: 0;
+    margin: 0;
+  }
+  .lang {
+    display: none;
+  }
+  li.list-items a {
+    font-size: 14px;
+  }
+  li.list-items:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  section.section {
+    margin: 2rem 4rem;
+    display: block;
+  }
+  .hero-container {
+    display: grid;
+    grid-template-areas:
+      "img  title title "
+      "img  description  description"
+      "img icon icon"
+      "img  btn btn ";
+    justify-items: flex-start;
+  }
+  .hero-container .hero-img {
+    grid-area: img;
+    padding: 0;
+    padding-right: 60px;
+  }
+  .icons {
+    display: block;
+    padding: 0;
+  }
+  .icon {
+    grid-area: icon;
+    max-width: 200px;
+    height: 100px;
+    padding: 0;
+  }
+  .title {
+    grid-area: title;
+  }
+
+  .description {
+    grid-area: description;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .btn {
+    grid-area: btn;
+    margin-left: 0px;
+    margin-top: 0;
+  }
+  .vid-section {
+  }
+  .img-vid {
+    height: 100vh;
+  }
+  #vid-icon {
+    top: 50%;
+    left: 50%;
+  }
+
+  section.two-lay {
+    display: grid;
+    grid-template-areas:
+      "title img"
+      "description img"
+      "icon img";
+    justify-items: flex-start;
+    row-gap: 0;
+  }
+
+  .two-lay .title {
+    grid-area: title;
+    font-size: 50px;
+  }
+  .two-lay .img {
+    grid-area: img;
+    height: 300px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .two-lay .icons {
+    grid-area: icon;
+  }
+  .two-lay .icons > .icon {
+    width: 150px;
+    height: 50px;
+    margin-right: 15px;
+  }
+  section.two-lay.even {
+    grid-template-areas:
+      "img title"
+      "img description"
+      "img icon";
+  }
+}
